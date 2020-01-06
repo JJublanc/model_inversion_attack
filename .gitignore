@@ -1,0 +1,8 @@
+# notebook checkpoint
+*.ipynb_checkpoints
+
+# other
+*/archive/*
+*/TODO.txt
+
+

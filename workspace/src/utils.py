@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 from numpy import expand_dims
-from keras.datasets.mnist import load_data
+from tensorflow.keras.datasets.mnist import load_data
 from numpy.random import randint
 
 def load_mnist_data(data_type):

@@ -1,15 +1,15 @@
-from keras.constraints import Constraint
-from keras.initializers import RandomNormal
-from keras.models import Sequential
-from keras.layers import Dense, Activation
-from keras.layers import Reshape
-from keras.layers import Flatten
-from keras.layers import Conv2D
-from keras.layers import Conv2DTranspose
-from keras.layers import LeakyReLU
-from keras.layers import BatchNormalization
-from keras.optimizers import RMSprop
-from keras import backend
+from tensorflow.keras.constraints import Constraint
+from tensorflow.keras.initializers import RandomNormal
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Activation
+from tensorflow.keras.layers import Reshape
+from tensorflow.keras.layers import Flatten
+from tensorflow.keras.layers import Conv2D
+from tensorflow.keras.layers import Conv2DTranspose
+from tensorflow.keras.layers import LeakyReLU
+from tensorflow.keras.layers import BatchNormalization
+from tensorflow.keras.optimizers import RMSprop
+from tensorflow.keras import backend
 from numpy.random import randn
 
 class ClipConstraint(Constraint):

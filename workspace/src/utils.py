@@ -40,6 +40,42 @@ def load_mnist_data(data_type):
     
     return train_X, train_y, test_X, test_y
 
+def load_mnist_data_2(data_type):
+    
+    if data_type=="private":
+        classes = [0,1,2,3,4]
+    elif data_type=="public":
+        classes = [5,6,7,8,9]
+    elif data_type=="all":
+        classes = [0,1,2,3,4,5,6,7,8,9]
+    
+    # load dataset
+    (train_X, train_y), (test_X, test_y) = load_data()
+    
+    # select train images and labels for the given classes
+    selected_train_ix = [(x in classes) for x in train_y]
+    train_X = train_X[selected_train_ix]
+    train_y = train_y[selected_train_ix]
+
+    # select test images and labels for the given classes
+    selected_test_ix = [(x in classes) for x in test_y]
+    test_X = test_X[selected_test_ix]
+    test_y = test_y[selected_test_ix]
+    
+    # expand to 3d, e.g. add channels and convert to float32
+    train_X = expand_dims(train_X, axis=-1).astype('float32')
+    test_X = expand_dims(test_X, axis=-1).astype('float32')
+    
+    # scale from [0,255] to [-1,1]
+    train_X = train_X / 255
+    test_X = test_X / 255
+    
+    print("train size : {}".format(len(train_X)))
+    print("test size : {}".format(len(test_X)))
+    print("total size : {}".format(len(train_X) + len(test_X)))
+    
+    return train_X, train_y, test_X, test_y
+
 def plot_img(data, labels, dim=(5, 5), im_shape=(28,28), fig_size=(10,10)):
     
     nb_images = dim[0]*dim[1]

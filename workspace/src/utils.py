@@ -4,6 +4,7 @@ from numpy import expand_dims
 from tensorflow.keras.datasets.mnist import load_data
 from numpy.random import randint
 
+
 def load_mnist_data(data_type):
     
     if data_type=="private":
@@ -31,8 +32,8 @@ def load_mnist_data(data_type):
     test_X = expand_dims(test_X, axis=-1).astype('float32')
     
     # scale from [0,255] to [-1,1]
-    train_X = (train_X - 127.5) / 127.5
-    test_X = (test_X - 127.5) / 127.5
+    train_X = train_X / 255
+    test_X = test_X / 255
     
     print("train size : {}".format(len(train_X)))
     print("test size : {}".format(len(test_X)))

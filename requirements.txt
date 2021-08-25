@@ -27,7 +27,7 @@ seaborn
 ###########
 # Base ML #
 ###########
-tensorflow==2.0.1
+tensorflow==2.5.1
 keras
 numpy>=1.14.5
 requests==2.22.0
